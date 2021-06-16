@@ -3,3 +3,10 @@ os: windows
 files:
   - source: 
     destination: C:\website-data
+hooks:
+  ApplicationStop:
+    - location: .\RemoveApp.ps1
+      timeout: 30
+  ApplicationStart:
+    - location: .\InstallApp.ps1
+      timeout: 300
